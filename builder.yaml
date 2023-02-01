@@ -7,8 +7,6 @@ spec:
   containers:  
   - name: pvsbuilder
     image: santospv08/kustomize-kubectl-git:latest
-    command:
-    - /bin/sh
     tty: true
   - name: kaniko
     image: gcr.io/kaniko-project/executor:debug
