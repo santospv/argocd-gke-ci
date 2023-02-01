@@ -5,13 +5,13 @@ metadata:
   namespace: jenkins	
 spec:
   containers:  
+  - name: git
+    image: makocchi/alpine-git-curl-jq
+    tty: true
   - name: kaniko
     image: gcr.io/kaniko-project/executor:debug
     command:
     - /busybox/cat
-    tty: true
-  - name: git
-    image: makocchi/alpine-git-curl-jq
     tty: true
     volumeMounts:
       - name: kaniko-secret
