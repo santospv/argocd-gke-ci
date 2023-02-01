@@ -10,6 +10,9 @@ spec:
     command:
     - /busybox/cat
     tty: true
+  - name: git
+    image: alpine/git
+    tty: true
     volumeMounts:
       - name: kaniko-secret
         mountPath: /kaniko/.docker

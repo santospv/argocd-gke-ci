@@ -25,6 +25,27 @@ pipeline {
         }
       }
     }
-  
+
+    stage('Update GIT') {
+      steps {
+        container('git') {
+          script {
+            catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+              withCredentials([usernamePassword(credentialsId: 'github', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
+                def encodedPassword = URLEncoder.encode("$GIT_PASSWORD",'UTF-8')
+                  sh 'git config user.email paulovitor8@gmail.com'
+                  sh 'git config user.name santospv'
+                  sh 'cat k8s/app/pvsapp.yaml'
+                  sh 'sed -i "s/<TAG>/${BUILD_NUMBER}/" k8s/app/pvsapp.yaml'
+                  sh 'cat k8s/app/pvsapp.yaml'
+                  sh 'git add .'
+                  sh "git commit -m 'Atualizando Versao no Manifesto k8s: ${env.BUILD_NUMBER}'"
+                  sh "git push https://${GIT_USERNAME}:${encodedPassword}@github.com/${GIT_USERNAME}/argocd-gke-ci.git"
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
