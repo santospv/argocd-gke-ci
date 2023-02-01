@@ -8,4 +8,4 @@ namespace: jenkins
 images:
 - name: pvsapp
   newName: santospv08/app-apache-docker
-  newTag: "31"
+  newTag: "32"
