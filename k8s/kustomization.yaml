@@ -8,4 +8,4 @@ namespace: jenkins
 images:
   - name: pvsapp
     newName: santospv08/app-apache-docker
-    newTag: <TAG>
+    newTag: IMAGE_TAG
