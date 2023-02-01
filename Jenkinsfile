@@ -28,7 +28,7 @@ pipeline {
 
     stage('Update GIT') {
       steps {
-        container('git') {
+        container('pvsbuilder') {
           script {
             catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
               withCredentials([usernamePassword(credentialsId: 'github', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {

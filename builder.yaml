@@ -5,8 +5,10 @@ metadata:
   namespace: jenkins	
 spec:
   containers:  
-  - name: git
-    image: makocchi/alpine-git-curl-jq
+  - name: pvsbuilder
+    image: santospv08/kustomize-kubectl-git
+    command:
+    - /bin/sh
     tty: true
   - name: kaniko
     image: gcr.io/kaniko-project/executor:debug
