@@ -1,0 +1,241 @@
+html, body
+{
+	height: 100%;
+}
+
+body
+{
+	margin: 0;
+	padding: 0;
+	background: #1C1C1C;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 12pt;
+	color: #666666;
+}
+
+h2, h3
+{
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+	font-weight: 700;
+	color: #222222;
+}
+
+h1
+{
+	font-size: 2em;
+	color: #ffffff;
+}
+
+h2
+{
+	font-size: 2.6em;
+}
+
+h3
+{
+	font-size: 1.6em;
+}
+
+p, ol, ul
+{
+	margin-top: 0px;
+}
+
+p
+{
+	line-height: 180%;
+}
+
+strong
+{
+}
+
+a
+{
+	color: #222222;
+}
+
+a:hover
+{
+	text-decoration: none;
+}
+
+a img
+{
+	border: none;
+}
+
+img.border
+{
+}
+
+img.alignleft
+{
+	float: left;
+}
+
+img.alignright
+{
+	float: right;
+}
+
+img.aligncenter
+{
+	margin: 0px auto;
+}
+
+hr
+{
+	display: none;
+}
+
+.title
+{
+	border-bottom: solid 4px #2F2F2F;
+	margin: 0 0 3em 0;
+	text-align: center;
+}
+
+.title:after
+{
+}
+
+.title h2
+{
+	margin: 0 0 1em 0;
+	font-weight: 700;
+}
+
+.title .byline
+{
+	position: relative;
+	top: -2em;
+	letter-spacing: 0.15em;
+	text-transform: uppercase;
+	font-weight: 400;
+	font-size: 0.90em;
+	color: #8E8E8E;
+}
+
+
+
+/** WRAPPER */
+
+#wrapper
+{
+	background: #FFF;
+}
+
+#featured-wrapper
+{
+	overflow:  hidden;
+	padding: 5em 0em;
+	background: url(images/bg01.jpg) repeat;
+	box-shadow: inset 0px 1px 0px 0px rgba(0,0,0,0.05), inset 0px 4px 15px 0px rgba(0,0,0,0.1);
+}
+
+.wrapper-style1
+{
+	overflow: hidden;
+	width: 900px;
+	margin: 0px auto;
+	padding: 5em 0em 3em 0em;
+}
+
+.container
+{
+	width: 900px;
+	margin: 0px auto;
+}
+
+
+
+.image img
+{
+	display: block;
+	width: -webkit-fill-available;
+}
+
+.image-full
+{
+	display: block;
+	width: 100%;
+	margin: 0 0 2em 0;
+}
+
+.image-left
+{
+	float: left;
+	margin: 0 2em 2em 0;
+}
+
+.image-centered
+{
+	display: block;
+	margin: 0 0 2em 0;
+}
+
+.image-centered img
+{
+	float: center
+	margin: 0 auto;
+	width: auto;
+}
+
+/** PAGE */
+
+#page
+{
+	overflow: hidden;
+}
+
+/** CONTENT */
+
+#content
+{
+	float: center
+	width: 790px;
+}
+
+#page .title
+{
+	text-align: center
+}
+
+#page .title h2
+{
+	font-size: 1.8em;
+	color: #FFF;
+}
+
+#page h3
+{
+	margin-bottom: 1em;
+	font-size: 1.3em;
+	color: #FFF;
+}
+
+#welcome
+{
+}
+
+#welcome .title h2
+{
+	color: #FFF;
+}
+
+#welcome p
+{
+	padding: 0em 4em;
+	text-align: center;
+	font-size: 1.1em;
+}
+
+#welcome a
+{
+	color: #787878;
+}
+
+
