@@ -10,3 +10,4 @@ RUN apk add curl \
         && cp kustomize kubectl /usr/local/bin/ \
         && chmod +x /usr/local/bin/kustomize \
         && chmod +x /usr/local/bin/kubectl
+CMD ash
