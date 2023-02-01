@@ -16,7 +16,7 @@ spec:
         app: pvsapp
     spec:
       containers:
-      - image: pvsapp
+      - image: santospv08/app-apache-docker:<TAG>
         imagePullPolicy: Always
         name: pvsapp
 
