@@ -41,6 +41,7 @@ pipeline {
                   sh "cat k8s/kustomization.yaml"
                   sh 'sed -i "s/<TAG>/${BUILD_NUMBER}/" k8s/kustomization.yaml'
                   sh "cat k8s/app/pvsapp.yaml"
+                  sh "cat kk8s/kustomization.yaml"
                   sh "git add ."
                   sh "git commit -m 'Atualizando Versao no Manifesto k8s: ${env.BUILD_NUMBER}'"
                   sh "git push https://${GIT_USERNAME}:${encodedPassword}@github.com/${GIT_USERNAME}/argocd-gke-ci.git HEAD:main"
