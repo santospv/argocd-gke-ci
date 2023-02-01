@@ -6,7 +6,7 @@ metadata:
 spec:
   containers:  
   - name: pvsbuilder
-    image: santospv08/kustomize-kubectl-git
+    image: santospv08/kustomize-kubectl-git:latest
     command:
     - /bin/sh
     tty: true
