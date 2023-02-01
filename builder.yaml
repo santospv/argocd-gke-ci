@@ -11,7 +11,7 @@ spec:
     - /busybox/cat
     tty: true
   - name: git
-    image: alpine/git
+    image: makocchi/alpine-git-curl-jq
     tty: true
     volumeMounts:
       - name: kaniko-secret

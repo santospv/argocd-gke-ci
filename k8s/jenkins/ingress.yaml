@@ -8,7 +8,7 @@ metadata:
 spec:
     ingressClassName: nginx
     rules:
-    - host: jenkins.34.174.133.138.nip.io
+    - host: jenkins.34.174.70.71.nip.io
       http: 
         paths:
         - path: /
