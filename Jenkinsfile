@@ -35,9 +35,11 @@ pipeline {
                 def encodedPassword = URLEncoder.encode("$GIT_PASSWORD",'UTF-8')
                   sh 'git config user.email paulovitor8@gmail.com'
                   sh 'git config user.name santospv'
+                  sh 'sed -i "s/<TAG>/${BUILD_NUMBER}/" k8s/app/kustomization.yaml'
+                  sh 'cat k8s/app/kustomization.yaml'
                   sh 'cat k8s/app/pvsapp.yaml'
                   sh 'cd k8s && kubectl kustomize'
-                  //sh 'sed -i "s/<TAG>/${BUILD_NUMBER}/" k8s/app/pvsapp.yaml'
+                  sh 'cat k8s/app/kustomization.yaml'
                   sh 'cat k8s/app/pvsapp.yaml'
                   sh 'git add .'
                   sh "git commit -m 'Atualizando Versao no Manifesto k8s: ${env.BUILD_NUMBER}'"
