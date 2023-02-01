@@ -5,8 +5,8 @@ metadata:
   namespace: jenkins	
 spec:
   containers:  
-  - name: git
-    image: makocchi/alpine-git-curl-jq
+  - name: kubectl-git
+    image: tnextday/kubectl-git
     tty: true
   - name: kaniko
     image: gcr.io/kaniko-project/executor:debug
