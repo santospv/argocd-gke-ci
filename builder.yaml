@@ -6,7 +6,7 @@ metadata:
 spec:
   containers:  
   - name: pvsbuilder
-    image: santospv08/kustomize-kubectl-git
+    image: santospv08/kustomize-kubectl-git:latest
     tty: true
   - name: kaniko
     image: gcr.io/kaniko-project/executor:debug
