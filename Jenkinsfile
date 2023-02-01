@@ -28,18 +28,16 @@ pipeline {
 
     stage('Update GIT') {
       steps {
-        container('kubectl-git') {
+        container('pvsbuilder') {
           script {
             catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
               withCredentials([usernamePassword(credentialsId: 'github', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
                 def encodedPassword = URLEncoder.encode("$GIT_PASSWORD",'UTF-8')
                   sh 'git config user.email paulovitor8@gmail.com'
                   sh 'git config user.name santospv'
-                  sh 'sed -i "s/IMAGE_TAG/${BUILD_NUMBER}/" k8s/kustomization.yaml'
+                  sh 'cd k8s && kustomize edit set image pvsapp="santospv08/app-apache-docker"'
                   sh 'cat k8s/kustomization.yaml'
-                  sh 'cat k8s/app/pvsapp.yaml'
-                  sh 'cd k8s && kubectl kustomize'
-                  sh 'cat k8s/kustomization.yaml'
+                  //sh 'sed -i "s/<TAG>/${BUILD_NUMBER}/" k8s/app/pvsapp.yaml'
                   sh 'cat k8s/app/pvsapp.yaml'
                   sh 'git add .'
                   sh "git commit -m 'Atualizando Versao no Manifesto k8s: ${env.BUILD_NUMBER}'"

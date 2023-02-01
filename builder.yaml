@@ -5,8 +5,8 @@ metadata:
   namespace: jenkins	
 spec:
   containers:  
-  - name: kubectl-git
-    image: tnextday/kubectl-git
+  - name: pvsbuilder
+    image: santospv08/kustomize-kubectl-git
     tty: true
   - name: kaniko
     image: gcr.io/kaniko-project/executor:debug
