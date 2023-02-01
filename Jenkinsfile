@@ -36,7 +36,8 @@ pipeline {
                   sh 'git config user.email paulovitor8@gmail.com'
                   sh 'git config user.name santospv'
                   sh 'cat k8s/app/pvsapp.yaml'
-                  
+                  sh 'cd k8s'
+                  sh 'kubectl kustomize'
                   //sh 'sed -i "s/<TAG>/${BUILD_NUMBER}/" k8s/app/pvsapp.yaml'
                   sh 'cat k8s/app/pvsapp.yaml'
                   sh 'git add .'
