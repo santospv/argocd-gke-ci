@@ -1,1 +1,1 @@
-ArgoCd com GKE + Jenkins
+Realizando GitOps com ArgoCd + GKE + Jenkins + Helm + Kustomize + Kaniko
