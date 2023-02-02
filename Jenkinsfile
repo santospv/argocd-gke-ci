@@ -37,7 +37,6 @@ pipeline {
                   sh "git config user.name santospv"
                   sh "cd k8s && kustomize edit set image pvsapp='santospv08/app-apache-docker:${BUILD_NUMBER}'"
                   sh "cat k8s/kustomization.yaml"
-                  //sh 'sed -i "s/<TAG>/${BUILD_NUMBER}/" k8s/kustomization.yaml'
                   sh "cat k8s/app/pvsapp.yaml"
                   sh "git add ."
                   sh "git commit -m 'Atualizando Versao no Manifesto k8s: ${env.BUILD_NUMBER}'"
